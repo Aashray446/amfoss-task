@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>JS</title>
+  </head>
+  <body>
+    <!--On click of Button-1 store something in localStorage-->
+    <button class="button" onclick="btn1()">Button-1</button>
+    <!--On click of Button-2 show a popup with current time-->
+    <button class="button" onclick="btn2()">Button-2</button>
+    <!--On click of Button-3 change the background-->
+    <button class="button" onclick="btn3()">Button-3</button>
+    <!--On click of Button-4 refresh the page-->
+    <button class="button" onclick="btn4()">Button-4</button>
+    <!--On click of Button-5 open a new window-->
+    <button class="button" onclick="btn5()">Button-5</button>
+    <!--On click of Button-6 spam the console with 'I did it'-->
+    <button class="button" onclick="btn6()">Button-6</button>
+    <form>
+      <!--set form action-->
+      <button class="button">Next</button>
+    </form>
+  </body>
+  <script>
+    btn1 = function(){
+      window.localStorage.setItem("isSet" , true);
+      window.alert("Item Has been Set");
+    }
+    btn2 = function() {
+      var currentTime = new Date;
+      window.alert("The time is " + currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds());
+    }
+    btn3 = function() {
+      document.body.style.background = "linear-gradient(to top left, #1d2d7c, #e35da0)"
+    }
+    btn4 = function() {
+      location.reload();
+    }
+    btn5 = function() {
+      window.open('index.html', '_blank');
+    }
+    btn6 = function() {
+      for( i = 0; i < 5; i++) {
+        console.log("I did it")
+      }
+    }
+  
+  </script>
+</html>
