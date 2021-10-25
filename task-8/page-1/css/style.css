@@ -200,3 +200,10 @@ body {
   background: #f7b1ab;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+.hidden{
+  color: rgb(216, 16, 16);
+  font-weight: bolder;
+  font-size: medium;
+  text-transform: uppercase;
+  display: none;
+}

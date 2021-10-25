@@ -24,12 +24,17 @@
       <div class="right-container">
         <form id="pizza_form" action="../page-2/index.html">
           <!-- set form-action -->
+          <center>
+          <div class="hidden" id="error">
+            Error messages.
+          </div>
+          </center>
           <header>
             <h1>Yay, pizza! Bake it right</h1>
             <div class="set">
               <div class="name">
                 <label for="name">Name</label>
-                <input id="name" placeholder="Your Name" type="text" />
+                <input id="name" placeholder="Your Name" type="text" required />
               </div>
               <div class="home-address">
                 <label for="home-address">Address</label>
@@ -37,20 +42,22 @@
                   id="home-address"
                   placeholder="Your Address"
                   type="text"
+                  required
                 />
               </div>
             </div>
             <div class="set">
               <div class="email">
                 <label for="email">Email</label>
-                <input id="email" placeholder="Your Email" type="email" />
+                <input id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Your Email" required type="email" />
               </div>
               <div class="phone-number">
                 <label for="phone-number">Phone Number</label>
-                <input
+                <input required
                   id="phone-number"
                   placeholder="Your Phone Number"
                   type="tel"
+                  pattern="[0-9]{10}"
                 />
                 <!-- set the pattern here -->
               </div>
@@ -147,11 +154,20 @@
   </body>
   <script>
     def_submit = function(btn_ref){
-      btn_ref.classList.add('button--loading');
-      // Adding a delay tO mimic like real one;
-      setTimeout(function() { 
-        document.getElementById("pizza_form").submit();
-      }, 1000);
+      // If all goood submit
+      if(check_validity()){
+        btn_ref.classList.add('button--loading');
+        // Adding a delay tO mimic like real one;
+        setTimeout(function() { 
+          document.getElementById("pizza_form").submit();
+          }, 1000);
+        }
+        // Display error
+      else {
+          var err_div = document.getElementById("error")
+          err_div.innerText = message;
+          err_div.style.display = "block";
+        }
     }
   </script>
 </html>
