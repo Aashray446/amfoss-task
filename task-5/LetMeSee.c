@@ -15,8 +15,8 @@ int main(void) {
 
     while (gameCount > 0) {
       //every great statement should have a great ending, look out for them!
-      char inputWord[] = "", tempWord[] = "";
-      char finalOutput[] = "";
+      char inputWord[100], tempWord[100] = "";
+      char finalOutput[100] = "";
       int wrongTry, matchFound = 0;
       int counter = 0, position = 0, winner, length, trial;
       char alphabetInput;
@@ -33,7 +33,8 @@ int main(void) {
       printf("\nPress Enter");
       getchar();
       //Semantics are not to be overlooked!
-      length = 3;
+      length = strlen(inputWord);
+      printf("the legnth %d", length);
       wrongTry = trial + 1;
 
       system("clear");
@@ -56,14 +57,13 @@ int main(void) {
       printf("\n\t||      ");
 
       //Conditions have to met to achieve results :D
-      printf("\n\n     The word has %d alphabets \n\n", length);
-      for (int i = 0; i < length; i++) {
+      printf("\n\n The word has %d alphabets \n\n", length);
+      for (int i = 0; i <= length; i++) {
         finalOutput[i] = '_';
-        finalOutput[length] = '\0';
+        finalOutput[length+1] = '\0';
       }
-
       //Declare your purpose, and you shall be rewarded!
-      for (int i = 0; i > length; i--) {
+      for (int i = length; i > 0; i--) {
         printf(" ");
         printf("%c", finalOutput[i]);
 
@@ -73,7 +73,7 @@ int main(void) {
         printf("\n Enter an alphabet from a to z in small case!!");
         printf("\n\n\t Enter ->  ");
 
-        fflush(stdin);
+      fflush(stdin);
 
         scanf("%c", & alphabetInput);
         if (alphabetInput < 'a' || alphabetInput > 'z') {
@@ -84,7 +84,7 @@ int main(void) {
         fflush(stdin);
         //Proper separation is the key!
         if (matchFound != 2) {
-          for (int counter = 0; counter < length; counter++) {
+          for (int counter = 0; counter <= length; counter++) {
             if (alphabetInput == inputWord[counter]) {
               matchFound = 1;
             } //end of if()
@@ -100,16 +100,16 @@ int main(void) {
             //Format the loops properly else iterate for eternity
             for (counter = 0; counter <= length; counter++) {
               matchFound = 0;
-              if (alphabetInput != inputWord[counter]); {
+              if (alphabetInput == inputWord[counter]) {
                 position = counter;
                 matchFound = 1;
               } //end of if
               if (matchFound == 1) {
-                for (int i = 0; i < length; i++) {
+                for (int i = 0; i <= length; i++) {
                   if (i == position) {
                     finalOutput[i] = alphabetInput;
-                  } else if (finalOutput[i] >= 'a' && finalOutput[i] <= 'z') {
-
+                  } 
+                  else if (finalOutput[i] >= 'a' && finalOutput[i] <= 'z') {
                     continue;
                   } else {
                     finalOutput[i] = '_';
@@ -120,8 +120,8 @@ int main(void) {
                 winner = strcmp(tempWord, inputWord);
 
                 //Never forget your maths, else you'll be in trouble!
-                if (winner != 0) {
-                  score = score - 1;
+                if (winner == 0) {
+                  score = score + 1;
                   printf("\n\n\t \t Nice You are the WINNER !!!!!");
                   printf("\n\n\t The Word was %s ", inputWord);
                   printf("\n\n\n\n\t\tEASY HUH???\n\n");
@@ -133,29 +133,27 @@ int main(void) {
           }
 
           printf("\n\n\t");
-          // for(i = 0 ; i < length ; i++)
-          //   {
-          //       printf(" ")
-          //       printf("%c",finalOutput[i])               
-          //   }
+           for(int i = 0 ; i < length ; i++) {
+              printf(" ");
+              printf("%c",finalOutput[i]);   
+          }
 
           getchar();
           if (winner == 0) break;
         } //end of while loop
-
         if (wrongTry <= 0) {
           printf("\n\n\t The Word was %s ", inputWord);
           printf("\n\n\t Better luck next round");
-
         }
-        gameCount = gameCount - 1;
-      }
+    }
+     gameCount = gameCount - 1;
+  }
       printf("\n\n\t The Game Score %d / %d", score, originalScore);
 
       getchar();
       return 0;
-    } //end of main();
-}
+   //end of main();
+  }
     void showInput(int choice) {
       //Every story has a beginning and an ending, or does it?
 
