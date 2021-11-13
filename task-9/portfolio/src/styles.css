@@ -19,4 +19,16 @@
     letter-spacing: 1px;
     font-size: larger;
     font-family: 'Lato', sans-serif;
+    border-bottom: 1px solid currentColor;
+    display: inline-block;
+    line-height: 0.5;
+}
+.theme_color {
+    color: #ff4500;
+}
+.jet_box {
+    background-color: #1B1212;
+    padding: 10px;
+    box-shadow: 10px 10px 5px #0e0e0f;
+    margin: 30px;
 }
