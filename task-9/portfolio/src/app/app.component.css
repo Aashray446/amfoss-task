@@ -12,3 +12,18 @@
 .main-nav .row .col-2 a:hover {
     color: #ff4500;
 }
+.button_nav {
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    color: #ff4500;
+    border: none;
+    font-weight: bolder;
+}
+.button_nav.active {
+    background-color: #e0d9d9;
+}
+.active_nav {
+    color: #ff4500;
+}

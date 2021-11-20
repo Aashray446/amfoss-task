@@ -1,15 +1,25 @@
 <!--- HIDDEN NAV BAR FOR DESKTOP----->
 <div class="container-fluid matte">
   <div class="container">
-    <div class="main-nav">
+    <div class="fixed-top center">
+      <div></div>
+      <button class="button_nav d-md-none d-sm-block" style="width: 50%; opacity: 0.9;">AASHRAYA KATIYAR</button>
+    </div>
+    <div class="main-nav d-none d-md-block">
         <div class="row">
-          <div class="col-2"></div>
-          <div class="col-2"><a href="#">Home</a></div>
-          <div class="col-2"><a href="About">About Myself</a></div>
-          <div class="col-2"><a href="Projects">Projects</a></div>
-          <div class="col-2"><a href="Clients">Clients</a></div>
-          <div class="col-2"></div>
+          <div class="col-sm-3"></div>
+          <div class="col-2"><a href="/home">Home</a></div>
+          <div class="col-2"><a href="/About">About Myself</a></div>
+          <div class="col-2"><a href="/Projects">Projects</a></div>
+          <div class="col-sm-2"></div>
         </div>
+    </div>
+    <div class="fixed-bottom d-md-none d-sm-block">
+      <div class="row g-0">
+        <div class="col-4"><button class="button_nav"  routerLink="/home" routerLinkActive="active" >Home</button></div>
+        <div class="col-4"><button class="button_nav" routerLink="/About" routerLinkActive="active"  >About</button></div>
+        <div class="col-4"><button class="button_nav" routerLink="/Projects" routerLinkActive="active">Projects</button></div>
+      </div>
     </div>
 </div>
 <router-outlet></router-outlet>

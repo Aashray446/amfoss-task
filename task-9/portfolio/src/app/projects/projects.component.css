@@ -1,0 +1,11 @@
+.stack {
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    margin: 5px;
+    padding: 10px;
+    color: red;
+}
+.center {
+    margin-bottom: 25px;
+}
