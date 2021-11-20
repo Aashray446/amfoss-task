@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int n,m,sum,i , j;
+        n = m = sum = i = j = 0;
+        n = in.nextInt();
+        m = in.nextInt();
+        int[] dev = new int[n];
+        int[] pro = new int[m];
+        for(int k = 0; k < n; k ++ ) {
+            dev[k] = in.nextInt();
+        }
+        for(int k = 0; k < m; k ++ ) {
+            pro[k] = in.nextInt();
+        }
+        /* --------------------------------------------------------------------------------- */
+        
+        Arrays.sort(dev);
+        Arrays.sort(pro);
+        while(true) {
+            if( i == n) {
+                System.out.println("YES");
+                System.out.println(sum);
+                break;
+            }
+            if(j == m ) {
+                System.out.println("NO");
+                  break;
+              }
+            if(pro[j] > dev[i]) {
+                sum = sum + pro[j];
+                i = i + 1;
+                j = j + 1;
+            }
+            else {
+                j = j + 1;
+            }
+            
+        }
+    }
+}

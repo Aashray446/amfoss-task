@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static int a,b,c,d;
+    
+    static int cal_ref_2(int n) {
+        if(n == 2) {
+            return b;
+        }
+        if (n == 1 ) {
+            return a;
+        }
+        return c * cal_ref_2(n-2) + d * cal_ref_2(n-1);
+    }
+    
+    public static void main(String args[] ) throws Exception {
+     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+     Scanner in = new Scanner(System.in);
+     int t = in.nextInt();
+        while(t > 0) {
+        a = in.nextInt();
+        b = in.nextInt();
+        c = in.nextInt();
+        d = in.nextInt();
+        int N = in.nextInt();
+        System.out.println(cal_ref_2(N));
+        t--;
+        }
+    }
+}

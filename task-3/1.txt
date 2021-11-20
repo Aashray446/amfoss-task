@@ -1,0 +1,27 @@
+target_num, limit = map(int,input().split(' '));
+lst = [];
+
+def check_count(num):
+    cnt = 0;
+    while(num % 2 == 0):
+        num = num / 2;
+        cnt= cnt + 1;
+    return cnt;
+
+target_div_count = check_count(target_num);
+#If the girl has no chance to win
+if(target_num % 2 != 0):
+    print(0);
+else:
+    for i in range(1, limit+1):
+        if(i == target_num):
+            continue;
+        elif(i % 2 == 0):
+            if(target_div_count > check_count(i)):
+                lst.append(i)
+        else:
+            lst.append(i);
+    print(len(lst));
+    print(*lst);
+
+#Checking The Div Count
