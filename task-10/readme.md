@@ -1,0 +1,2 @@
+Week -1 : Scartch Programming  -- Our teacher also teaching the same topic so I thought It will be better to spent time on the taskt that make me learn new so I left this task.
+Week - 2 , Week -3 ,Week -4 : I know by attempting these task I will learn something new but I was familiar of most of the topic explained and as due to the time restriction and academic pressure I shift my energy and time to other task. :-(
