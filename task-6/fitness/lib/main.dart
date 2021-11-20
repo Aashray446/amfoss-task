@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -11,6 +11,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: intro(),
+    ); 
+  }
+}
+
+class intro extends StatelessWidget {
+
   List<PageViewModel> getPages() {
     return [
       PageViewModel(
@@ -37,12 +50,9 @@ class MyApp extends StatelessWidget {
     ];
   }
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Scaffold(
+    return  Scaffold(
       body: IntroductionScreen(
         globalBackgroundColor: Colors.white,
         pages: getPages(),
@@ -52,7 +62,7 @@ class MyApp extends StatelessWidget {
           Navigator.of(context)
           .push(
             MaterialPageRoute(
-              builder: (context) => HomePage()
+              builder: (context) => HomePage(),
             )
           );
         },
@@ -71,7 +81,6 @@ class MyApp extends StatelessWidget {
             )
         ),
       ),
-    ),
     );
   }
 }
@@ -81,10 +90,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('page(@')),
-      body: const Center(
-        child: Text("Weclome"),
-      ),
+      appBar: AppBar(
+        title: Text('Welcome'),
+        backgroundColor: Colors.transparent,
+        ),
+      body: Center (child: Column(
+        children: [
+          Image(image: AssetImage("resources/welcome.png")),
+          Text(
+            "Aashray Katiyar",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          Text("I am from Nepal, currently enrolled in CSI AIE A batch. My roll number is 85")
+        ],
+      ),)
     );
   }
 }
